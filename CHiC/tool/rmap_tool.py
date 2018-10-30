@@ -310,6 +310,9 @@ class makeRmapFile(Tool):
         if not os.path.isdir(out_dir_rtree):
             os.mkdir(out_dir_rtree)
 
+        self.configuration["renzime"] = { self.configuration["chic_RE_name"] :
+                                          self.configuration["chic_RE_sequence"]
+                                        }
 
         if "".join(output_files["Rtree_file_dat"].split(".")[:-1]) != \
            "".join(output_files["Rtree_file_idx"].split(".")[:-1]):

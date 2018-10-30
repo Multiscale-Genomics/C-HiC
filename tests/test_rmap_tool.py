@@ -30,8 +30,9 @@ def test_rmap_tool():
     """
     path = os.path.join(os.path.dirname(__file__), "data/")
 
-    configuration = {"renzime": {"HindIII": 'A|AGCTT'}}
-
+    configuration = { "chic_RE_name": "HindIII",
+                      "chic_RE_sequence": "A|AGCTT"
+                    }
     input_files = {
         "genome_fa": path + "test_baitmap/chr21_hg19.fa",
         }
@@ -43,10 +44,7 @@ def test_rmap_tool():
     }
 
     output_files = {
-        "RMAP": path + "test_run_chicago/test.rmap",
-        "Rtree_file_dat": path + "test_rmap/rtree_file.dat",
-        "Rtree_file_idx": path + "test_rmap/rtree_file.idx",
-        "chr_handler": path + "test_baitmap/chr_handler.txt"
+
         }
 
     rmap_handle = makeRmapFile(configuration)
