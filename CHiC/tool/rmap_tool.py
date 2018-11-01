@@ -392,3 +392,4 @@ class makeRmapFile(Tool):
         }
 
         return output_files, output_metadata
+
