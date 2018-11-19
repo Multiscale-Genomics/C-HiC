@@ -217,10 +217,10 @@ Checkout the code for the DM API and the C-HiC pipelines:
 
    cd ${HOME}/code
    pyenv activate C-HiC
+   pip install --upgrade setuptools pip
    pip install git+https://github.com/Multiscale-Genomics/mg-dm-api.git
    pip install git+https://github.com/Multiscale-Genomics/mg-tool-api.git
    pip install git+https://github.com/Multiscale-Genomics/mg-process-fastq.git
-
 
    git clone https://github.com/pabloacera/C-HiC.git
    cd C-HiC
