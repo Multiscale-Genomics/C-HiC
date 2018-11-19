@@ -167,8 +167,6 @@ Setup the symlinks
 
    ln -s ${HOME}/lib/hicup_v0.6.1/* ${HOME}/bin/
 
-   ln -s ${HOME}/lib/bwa/bwa bwa
-
    ln -s ${HOME}/lib/bowtie2-2.3.4-linux-x86_64/bowtie2 bowtie2
    ln -s ${HOME}/lib/bowtie2-2.3.4-linux-x86_64/bowtie2-align-s bowtie2-align-s
    ln -s ${HOME}/lib/bowtie2-2.3.4-linux-x86_64/bowtie2-align-l bowtie2-align-l
