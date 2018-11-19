@@ -102,17 +102,6 @@ HiCUP
     cd hicup_v0.6.1
     chmod a+x *
 
-BWA Sequence Aligner
-^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: none
-   :linenos:
-
-   cd ${HOME}/lib
-   git clone https://github.com/lh3/bwa.git
-   cd bwa
-   make
-
 SAMtools
 ^^^^^^^^
 
