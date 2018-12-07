@@ -102,17 +102,6 @@ HiCUP
     cd hicup_v0.6.1
     chmod a+x *
 
-BWA Sequence Aligner
-^^^^^^^^^^^^^^^^^^^^
-
-.. code-block:: none
-   :linenos:
-
-   cd ${HOME}/lib
-   git clone https://github.com/lh3/bwa.git
-   cd bwa
-   make
-
 SAMtools
 ^^^^^^^^
 
@@ -158,7 +147,7 @@ Install CHiCAGO
    echo "options(repos = c(CRAN = 'http://mirrors.ebi.ac.uk/CRAN/'))" > ${HOME}/.Rprofile
    echo ".libPaths('~/R')" >> ${HOME}/.Rprofile
    echo 'message("Using library:", .libPaths()[1])' >> ${HOME}/.Rprofile
-   sudo Rscript sudo Rscript CHiC/tool/scripts/install_packages.R 
+   sudo Rscript CHiC/tool/scripts/install_packages.R 
 
    cd ${HOME}/C-HiC/CHiC/tool/scripts/
    wget https://bitbucket.org/chicagoTeam/chicago/raw/e288015f75d36c5367d1595e0ac8099f2ce82aa1/chicagoTools/runChicago.R
@@ -177,8 +166,6 @@ Setup the symlinks
 
 
    ln -s ${HOME}/lib/hicup_v0.6.1/* ${HOME}/bin/
-
-   ln -s ${HOME}/lib/bwa/bwa bwa
 
    ln -s ${HOME}/lib/bowtie2-2.3.4-linux-x86_64/bowtie2 bowtie2
    ln -s ${HOME}/lib/bowtie2-2.3.4-linux-x86_64/bowtie2-align-s bowtie2-align-s
@@ -230,10 +217,10 @@ Checkout the code for the DM API and the C-HiC pipelines:
 
    cd ${HOME}/code
    pyenv activate C-HiC
+   pip install --upgrade setuptools pip
    pip install git+https://github.com/Multiscale-Genomics/mg-dm-api.git
    pip install git+https://github.com/Multiscale-Genomics/mg-tool-api.git
    pip install git+https://github.com/Multiscale-Genomics/mg-process-fastq.git
-
 
    git clone https://github.com/pabloacera/C-HiC.git
    cd C-HiC
