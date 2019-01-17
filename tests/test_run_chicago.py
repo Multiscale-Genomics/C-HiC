@@ -29,10 +29,8 @@ def test_chicago():
     path = os.path.join(os.path.dirname(__file__), "data/")
 
     input_files = {
-        "chinput": [
-            path + "test_run_chicago/data_chicago/GM_rep1.chinput",
-            path + "test_run_chicago/data_chicago/GM_rep2.chinput"
-            ],
+        "chinput":
+            path + "test_run_chicago/data_chicago/output_chinput.chinput",
         "setting_file" : path + "test_run_chicago/data_chicago/sGM12878.settingsFile",
         "rmap_chicago" : path + "test_run_chicago/data_chicago/h19_chr20and21.rmap",
         "baitmap_chicago" : path + "test_run_chicago/data_chicago/h19_chr20and21.baitmap",
@@ -43,11 +41,22 @@ def test_chicago():
 
     output_files = {
         "output": path + "test_run_chicago/data_chicago/out_run_chicago.tar",
+        "chinput":
+            path + "test_run_chicago/data_chicago/output_chinput.chinput",
+        "hicup_outdir_tar": path + "test_hicup/output.tar",
+        "washU_text" : path + "test_baitmap/output_test_washU_text.txt",
+        "pdf_examples": path + "test_baitmap/pdf_examples.pdf"
         }
 
     metadata = {
         "chinput" : Metadata(
-            "data_chicago", "chinput", [], None, None, 9606)
+            "data_chicago", "chinput", [], None, None, 9606),
+        "genome_fa" : Metadata(
+            "data_chicago", "chinput", [], None, None, 9606),
+        "fastq1": Metadata(
+            "data_chicago", "chinput", [], None, None, 9606),
+        "fastq2": Metadata(
+            "data_chicago", "chinput", [], None, None, 9606),
         }
 
     config = {
@@ -67,7 +76,9 @@ def test_chicago():
         "chicago_en_full_cis_range": "None",
         "chicago_en_sample_no": "100",
         "chicago_en_trans": "None",
-        "chicago_features_only": "None"}
+        "chicago_features_only": "None",
+        "execution": path + "test_baitmap",
+        "genome_name": "None"}
 
     chicago_handle = ChicagoTool(config)
     chicago_handle.run(input_files, metadata, output_files)

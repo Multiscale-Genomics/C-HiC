@@ -30,12 +30,12 @@ def test_bam2chicago():
         "RMAP" : path + "test_run_chicago/test.rmap",
         "BAITMAP" : path +  "test_run_chicago/test.baitmap",
         "hicup_outdir_tar" : path + "test_hicup/output.tar",
-        "fastq1": "/home/pacera/MuG/CHi-C/tests/data/test_truncater/SRR3535023_1.fastq",
-        "fastq2": "/home/pacera/MuG/CHi-C/tests/data/test_truncater/SRR3535023_2.fastq"
+        "fastq1": "/home/pacera/MuG/CHi-C/tests/data/test_truncater/SRR3535023_1_chr21_new.fastq",
+        "fastq2": "/home/pacera/MuG/CHi-C/tests/data/test_truncater/SRR3535023_2_chr21_new.fastq"
     }
 
     output_files = {
-        "chinput" :  path + "test_bam2chicago_tool/output_chinput.chinput",
+        "chinput" :  path + "test_baitmap/output_chinput.chinput",
         "hicup_outdir_tar": path + "test_hicup/output.tar"
     }
 
@@ -50,7 +50,10 @@ def test_bam2chicago():
             "TAR", "CHiC_data", input_files["hicup_outdir_tar"],
             {"fastq1" : "SRR3535023_1.fastq",
              "fastq2" : "SRR3535023_2.fastq", "genome" : "human_hg19"},
-            9606)
+            9606),
+        "genome_fa" : Metadata(
+            "TXT", ".baitmap",
+            path+"/h19_chr20and21.baitmap_4col_chr.txt", None, {}, 9606),
     }
 
     configuration = {
