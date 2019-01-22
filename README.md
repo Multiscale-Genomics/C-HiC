@@ -1,6 +1,6 @@
 # CHi-C
 
-[![Documentation Status](https://readthedocs.org/projects/CHi-C/badge/?version=latest)](http://CHi-C.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/Multiscale-Genomics/CHi-C.svg?branch=master)](https://travis-ci.org/Multiscale-Genomics/CHi-C) [![Code Health](https://landscape.io/github/Multiscale-Genomics/CHi-C/master/landscape.svg?style=flat)](https://landscape.io/github/Multiscale-Genomics/CHi-C/master)
+[![Documentation Status](https://readthedocs.org/projects/capture-chi-c/badge/?version=latest)](https://capture-chi-c.readthedocs.io/en/latest/?badge=latest) [![Build Status](https://travis-ci.org/Multiscale-Genomics/CHi-C.svg?branch=master)](https://travis-ci.org/Multiscale-Genomics/CHi-C) [![Code Health](https://landscape.io/github/Multiscale-Genomics/CHi-C/master/landscape.svg?style=flat)](https://landscape.io/github/Multiscale-Genomics/CHi-C/master)
 
 
 This repository contains pipelines for analyzing capture Hi-C data. CHiCAGO algorithm is used for the normalization of chromatin contacts
@@ -34,7 +34,7 @@ This repository contains pipelines for analyzing capture Hi-C data. CHiCAGO algo
 Installation
 ------------
 
-For a guide to the full installation procedure the see [ReadTheDocs](http://CHi-C.readthedocs.io).
+For a guide to the full installation procedure the see [ReadTheDocs]https://capture-chi-c.readthedocs.io/en/latest/?badge=latest
 
 Directly from GitHub:
 
@@ -43,7 +43,7 @@ Directly from GitHub:
 
    cd ${HOME}/code
 
-   git clone https://github.com/Multiscale-Genomics/CHi-C.git
+   git clone -b VM_CR1 https://github.com/Multiscale-Genomics/CHi-C.git
 
    cd CHi-C
 
