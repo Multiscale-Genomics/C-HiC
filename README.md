@@ -34,7 +34,7 @@ This repository contains pipelines for analyzing capture Hi-C data. CHiCAGO algo
 Installation
 ------------
 
-For a guide to the full installation procedure the see [ReadTheDocs]https://capture-chi-c.readthedocs.io/en/latest/?badge=latest
+For a guide to the full installation procedure the see [ReadTheDocs](https://capture-chi-c.readthedocs.io/en/latest/?badge=latest)
 
 Directly from GitHub:
 
