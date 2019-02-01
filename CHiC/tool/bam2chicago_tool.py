@@ -18,12 +18,8 @@ import os
 import subprocess
 import sys
 from shutil import move
-from shutil import rmtree
 import tarfile
-import pandas as pd
-from tool.common import common
 from utils import logger
-import re
 
 try:
     if hasattr(sys, '_run_from_cmdl') is True:
@@ -115,8 +111,6 @@ class bam2chicagoTool(Tool):
          name of the sample
         """
         out_folder = "".join(chinput.split(".")[0])
-
-
 
         try:
             bam2chicago_script = os.path.join(os.path.dirname(__file__), "scripts/bam2chicago.sh")
