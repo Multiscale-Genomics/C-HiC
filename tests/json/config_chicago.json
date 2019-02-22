@@ -63,7 +63,12 @@
         {
             "name": "chicago_design_dir",
             "value": "tests/data/test_run_chicago/data_chicago"
+        },
+	{
+            "name": "execution",
+            "value": "tests/data/test_baitmap"
         }
+
     ],
     "output_files": [
         {
@@ -80,6 +85,38 @@
                 "file_path": "tests/data/test_run_chicago/data_chicago/out_run_chicago.tar",
                 "data_type": "tar",
                 "compressed": "null"
+            }
+        },
+        {
+            "required": true,
+            "allow_multiple": false,
+            "name": "hicup_outdir_tar",
+            "file": {
+                "file_type": "TAR",
+                "meta_data": {
+                    "visible": true,
+                    "tool": "makeBaitmap",
+                    "description": "Output"
+                },
+                "file_path": "tests/data/test_hicup/output.tar",
+                "data_type": "data_CHiC",
+                "compressed": "null"
+            }
+        },
+	{
+            "required": true,
+            "allow_multiple": false,
+            "name": "chinput",
+            "file": {
+                "file_type": "TAR",
+                "meta_data": {
+                    "visible": true,
+                    "tool": "bam2chicago",
+                    "description": "Output"
+                },
+                "file_path": "tests/data/test_bam2chicago_tool/output_chinput.chinput",
+                "data_type": "data_CHiC",
+                "compressed": true
             }
         }
     ]
