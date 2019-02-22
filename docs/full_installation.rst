@@ -143,27 +143,23 @@ Install CHiCAGO
 .. code-block:: none
    :linenos:
 
-   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E298A3A825C0D65DFD57CBB651716619E084DAB9
-   sudo add-apt-repository 'deb [arch=amd64,i386] https://cran.rstudio.com/bin/linux/ubuntu xenial/'
    sudo apt-get update -qq
-   sudo apt-get install r-base-core
    sudo apt-get install python-rpy2
 
 
    cd ${HOME}/lib
    sudo apt-get install libtbb-dev
-   sudo apt-get install libssl-dev
    cd ${HOME}/C-HiC/
    echo "R_LIB=${HOME}/R" > ${HOME}/.Renviron
-   echo "options(repos = c(CRAN = 'http://mirrors.ebi.ac.uk/CRAN/'))" > ${HOME}/.Rprofile
    echo ".libPaths('~/R')" >> ${HOME}/.Rprofile
    echo 'message("Using library:", .libPaths()[1])' >> ${HOME}/.Rprofile
-   sudo Rscript sudo Rscript CHiC/tool/scripts/install_packages.R 
+   R
+   options(repos = c(CRAN = "http://cran.rstudio.com"))
+   install.packages("Delaporte")
+   install.packages("MASS")
 
    cd ${HOME}/C-HiC/CHiC/tool/scripts/
-   wget https://bitbucket.org/chicagoTeam/chicago/raw/e288015f75d36c5367d1595e0ac8099f2ce82aa1/chicagoTools/runChicago.R
    wget https://bitbucket.org/chicagoTeam/chicago/raw/e288015f75d36c5367d1595e0ac8099f2ce82aa1/chicagoTools/bam2chicago.sh
-   wget https://bitbucket.org/chicagoTeam/chicago/raw/e288015f75d36c5367d1595e0ac8099f2ce82aa1/chicagoTools/makeDesignFiles.py
    chmod +x bam2chicago.sh
 
 Setup the symlinks
