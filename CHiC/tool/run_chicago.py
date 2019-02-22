@@ -338,58 +338,134 @@ class ChicagoTool(Tool):
 
         files_dir = os.listdir(self.configuration["execution"])
         for file_ in files_dir:
-            if file_.startswith("Digest_"+self.configuration["genome_name"]):
-                os.remove(file_)
+            try:
+                if file_.startswith("Digest_"+self.configuration["genome_name"]):
+                    os.remove(file_)
+            except KeyError:
+                pass
 
-        output_metadata = {
-            "output" : Metadata(
-                data_type="data_chic",
-                file_type="TAR",
-                file_path=output_files["output"],
-                sources=[
-                    input_metadata["genome_fa"].file_path,
-                    input_metadata["fastq1"].file_path,
-                    input_metadata["fastq2"].file_path
-                ],
-                taxon_id=input_metadata["genome_fa"].taxon_id,
-                meta_data={
-                    "tool": "process_CHiC",
-                    "tool_description" : "run_chicago",
+        if "genome_fa" in input_metadata:
+            output_metadata = {
+                "output" : Metadata(
+                    data_type="data_chic",
+                    file_type="TAR",
+                    file_path=output_files["output"],
+                    sources=[
+                        input_metadata["fastq1"].file_path,
+                        input_metadata["fastq2"].file_path,
+                        input_metadata["genome_fa"].file_path
+                    ],
+                    taxon_id=input_metadata["genome_fa"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                ),
 
-                }
-            ),
+                "washU_text" : Metadata(
+                    data_type="data_chic",
+                    file_type="TXT",
+                    file_path=output_files["washU_text"],
+                    sources=[
+                        input_metadata["fastq1"].file_path,
+                        input_metadata["fastq2"].file_path,
+                        input_metadata["genome_fa"].file_path
+                    ],
+                    taxon_id=input_metadata["genome_fa"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                ),
 
-            "washU_text" : Metadata(
-                data_type="data_chic",
-                file_type="TXT",
-                file_path= output_files["washU_text"],
-                sources=[
-                    input_metadata["genome_fa"].file_path,
-                    input_metadata["fastq1"].file_path,
-                    input_metadata["fastq2"].file_path
-                ],
-                taxon_id=input_metadata["genome_fa"].taxon_id,
-                meta_data={
-                    "tool": "process_CHiC",
-                    "tool_description" : "run_chicago",
-                }
-            ),
+                "pdf_examples" : Metadata(
+                    data_type="data_chic",
+                    file_type="PDF",
+                    file_path=output_files["pdf_examples"],
+                    sources=[
+                        input_metadata["fastq1"].file_path,
+                        input_metadata["fastq2"].file_path,
+                        input_metadata["genome_fa"].file_path
+                    ],
+                    taxon_id=input_metadata["genome_fa"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                )
+            }
 
-            "pdf_examples" : Metadata(
-                data_type="data_chic",
-                file_type="PDF",
-                file_path= output_files["pdf_examples"],
-                sources=[
-                    input_metadata["genome_fa"].file_path,
-                    input_metadata["fastq1"].file_path,
-                    input_metadata["fastq2"].file_path
-                ],
-                taxon_id=input_metadata["genome_fa"].taxon_id,
-                meta_data={
-                    "tool": "process_CHiC",
-                    "tool_description" : "run_chicago",
-                }
-            )
-        }
+        else:
+            output_metadata = {
+                "output" : Metadata(
+                    data_type="data_chic",
+                    file_type="TAR",
+                    file_path=output_files["output"],
+                    sources=[
+                        input_metadata["chinput"].file_path
+                    ],
+                    taxon_id=input_metadata["chinput"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                ),
+
+                "washU_text" : Metadata(
+                    data_type="data_chic",
+                    file_type="TXT",
+                    file_path=output_files["washU_text"],
+                    sources=[
+                        input_metadata["chinput"].file_path
+                    ],
+                    taxon_id=input_metadata["chinput"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                ),
+
+                "pdf_examples" : Metadata(
+                    data_type="data_chic",
+                    file_type="PDF",
+                    file_path=output_files["pdf_examples"],
+                    sources=[
+                        input_metadata["chinput"].file_path
+                    ],
+                    taxon_id=input_metadata["chinput"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                ),
+
+                "hicup_outdir_tar" : Metadata(
+                    data_type="data_chic",
+                    file_type="PDF",
+                    file_path=output_files["pdf_examples"],
+                    sources=[
+                        input_metadata["chinput"].file_path
+                    ],
+                    taxon_id=input_metadata["chinput"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                ),
+                "chinput" : Metadata(
+                    data_type="data_chic",
+                    file_type="PDF",
+                    file_path=output_files["pdf_examples"],
+                    sources=[
+                        input_metadata["chinput"].file_path
+                    ],
+                    taxon_id=input_metadata["chinput"].taxon_id,
+                    meta_data={
+                        "tool": "process_CHiC",
+                        "tool_description" : "run_chicago",
+                    }
+                )
+            }
+
 
         return output_files, output_metadata

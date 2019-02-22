@@ -289,7 +289,7 @@ class bam2chicagoTool(Tool):
                     BAITMAP,
                     sorted_bam
                     ],
-                taxon_id=input_metadata["RMAP"].taxon_id,
+                taxon_id="",
                 meta_data={"tool": "process_CHiC",
                            "tool_description" : "bam2chicago_tool"}
             ),
@@ -298,11 +298,10 @@ class bam2chicagoTool(Tool):
                 file_type="TAR",
                 file_path=output_files["hicup_outdir_tar"],
                 sources=[
-                    input_metadata["RMAP"].file_path,
                     input_metadata["fastq1"].file_path,
-                    input_metadata["fastq1"].file_path
+                    input_metadata["fastq2"].file_path
                     ],
-                taxon_id=input_metadata["RMAP"].taxon_id,
+                taxon_id="",
                 meta_data={"tool": "process_CHiC",
                            "tool_description" : "hicup_tool"},
                 )

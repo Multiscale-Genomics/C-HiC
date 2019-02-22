@@ -71,23 +71,7 @@
 
     ],
     "output_files": [
-        {
-            "required": true,
-            "allow_multiple": false,
-            "name": "output",
-            "file": {
-                "file_type": "TAR",
-                "meta_data": {
-                    "visible": true,
-                    "tool": "runChicago",
-                    "description": "Output"
-                },
-                "file_path": "tests/data/test_run_chicago/data_chicago/out_run_chicago.tar",
-                "data_type": "tar",
-                "compressed": "null"
-            }
-        },
-        {
+       {
             "required": true,
             "allow_multiple": false,
             "name": "hicup_outdir_tar",
@@ -103,21 +87,71 @@
                 "compressed": "null"
             }
         },
-	{
+        {
             "required": true,
             "allow_multiple": false,
             "name": "chinput",
             "file": {
-                "file_type": "TAR",
+                "file_type": "chinput",
                 "meta_data": {
                     "visible": true,
                     "tool": "bam2chicago",
                     "description": "Output"
                 },
                 "file_path": "tests/data/test_bam2chicago_tool/output_chinput.chinput",
-                "data_type": "data_CHiC",
-                "compressed": true
+                "data_type": "TAR",
+                "compressed": "TAR"
+            }
+        },
+        {
+            "required": true,
+            "allow_multiple": false,
+            "name": "output",
+            "file": {
+                "file_type": "tar",
+                "meta_data": {
+                    "visible": true,
+                    "tool": "bam2chicago",
+                    "description": "Output"
+                },
+                "file_path": "tests/data/test_run_chicago/data_chicago/out_run_chicago.tar",
+                "data_type": "tar",
+                "compressed": "null"
+            }
+        },
+        {
+            "required": true,
+            "allow_multiple": false,
+            "name": "washU_text",
+            "file": {
+                "file_type": "tar",
+                "meta_data": {
+                    "visible": true,
+                    "tool": "bam2chicago",
+                    "description": "Output"
+                },
+                "file_path": "tests/data/test_baitmap/washu_test.txt",
+                "data_type": "tar",
+                "compressed": "null"
+            }
+        },
+        {
+            "required": true,
+            "allow_multiple": false,
+            "name": "pdf_examples",
+            "file": {
+                "file_type": "tar",
+                "meta_data": {
+                    "visible": true,
+                    "tool": "bam2chicago",
+                    "description": "Output"
+                },
+
+                "file_path": "tests/data/test_baitmap/pdf_examples.pdf",
+                "data_type": "tar",
+                "compressed": "null"
             }
         }
+
     ]
 }
