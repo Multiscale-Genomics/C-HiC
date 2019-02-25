@@ -28,8 +28,6 @@ Software
 - perl
 - HiCUP
 - bwa
-- GEM
-- TADbit
 - samtools>1.3
 
 Python Modules
@@ -38,8 +36,14 @@ Python Modules
 - mg-tool-api
 - pylint
 - pytest
+- rtree
+- pyenv and pyenv-virtualenv
+- rpy2
+- matplotlib
 - pandas
 - rtree
+- numpy
+- scipy
 
 
 R Modules
