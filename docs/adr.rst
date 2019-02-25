@@ -32,3 +32,7 @@ This file is passed to the makeBaitmap.py script and generate the .batimap file 
 ------------------------------------------------------------
 
 This branch contains some modifications from Mark to solve issues with pyCOMPSs regarding makeBaitmap.py tool
+
+10-12-2018 creation of the branch VM_CR1 (VM current release version)
+---------------------------------------------------------------------
+This Branch contains all the changes that to run the pipeline in the COMPSs VM from BSC cluster.
