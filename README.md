@@ -16,6 +16,9 @@ This repository contains pipelines for analyzing capture Hi-C data. CHiCAGO algo
   - matplotlib
   - pandas
   - rtree
+  - scipy
+  - numpy
+  - rtree
 
 
 - R >=3.1.2
